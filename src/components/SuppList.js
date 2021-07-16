@@ -9,8 +9,14 @@ const SuppList = () => {
   const selectedIdFromSearch = queryString.parse(search).selectedIdFromSearch
 
   useFirestoreConnect([
-    { collection: 'surveys' },
+    { collection: 'supplements' },
   ])
+
+  const [selectedSupplementsId, setSelectedSupplementsId] = useState(selectedIdFromSearch)
+
+  const supplements = useSelector(state => state.firestore.ordered.supplements)
+
+  
   return (
     <>
 
