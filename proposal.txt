@@ -1,0 +1,25 @@
+Name of Student: Min Chang
+
+Name of Project: FirstActionSupplements
+
+Project's Purpose or Goal: It will let users create an account and either sell supplements by listing them on, or buy supplements.
+
+List the absolute minimum features the project requires to meet this purpose or goal:
+
+Authorization
+Be able to checkout/buy supplements
+Let users upload supplements that they would be selling
+What tools, frameworks, libraries, APIs, modules and/or other resources (whatever is specific to your track, and your language) will you use to create this MVP? List them all here. Be specific.
+
+React.js/JavaScript
+Firestore/NoSQL
+C# for backend
+If you finish developing the minimum viable product (MVP) with time to spare, what will you work on next? Describe these features here: Be specific.
+
+Allow users to create reviews for products that they bought
+Add blogs to each user's profile so they can log their fitness progress
+Build a specific state for the best supplements 
+What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
+
+SCSS
+A supplements API
