@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFirestore, useFirestoreConnect } from 'react-redux-firebase';
 import { useParams, useHistory, Link } from 'react-router-dom';
 
@@ -13,8 +13,71 @@ const Supplement = () => {
     price: ''
   })
 
-  useFirestoreConnect([{ collection: 'supplements'}]
+  useFirestoreConnect([{ collection: 'supplements'}])
   
+  const supplement = useSelector(
+    state => state.firestore.data.supplements[selectedSupplementId]
   )
 
+  useEffect(() => {
+    if (supplement) setSelectedSupplement(supplement)
+  }, [supplement]) //second argument fedines the variable on which the hook depends on
+
+  const handleChange = (e) => {
+    const { value, name } = e.target
+    const updatedSupplement = { ...selectedSupplement }
+    updatedSupplement[name] = value
+    setSelectedSupplement(updatedSupplement)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    selectedSupplementId ? updatedSupplement : addNewSupplementToFireStore()
+  }
+  
+  const addNewSupplementToFireStore = () => {
+    history.push('/supplements')
+    return firestore.collection('supplements').add(selectedSupplement)
+  }
+
+  const updateSupplement = (e) => {
+    history.push('/supplements')
+    return firestore.update(
+      {
+        collection: 'supplements',
+        doc: selectedSupplementId
+      }
+    )
+  }
+
+  return (
+    <>
+    <form onSubmit={handleSubmit}>
+      <input
+        onChange={handleChange}
+        type='text'
+        name='title'
+        placeholder='Supplment Title'
+        defaultValue='selectedSupplement.title'
+      />
+      <input
+        onChange={handleChange}
+        type='text'
+        name='description'
+        placeholder='Add Supplement Description'
+        defaultValue='selectedSupplement.description'
+        />
+        <input
+          onChange={handleChange}
+          type='text'
+          name='price'
+          placeholder='Add Price'
+          defaultValue='selectedSupplement.price'
+          />
+          <button type='submit'>Done</button>
+    </form>
+    </>
+  )
 }
+
+export default Supplement;
