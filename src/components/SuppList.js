@@ -13,7 +13,7 @@ const SuppList = () => {
     { collection: 'supplements' },
   ])
 
-  const [selectedSupplementsId, setSelectedSupplementsId] = useState(selectedIdFromSearch)
+  const [selectedSupplementId, setSelectedSupplementId] = useState(selectedIdFromSearch)
 
   const supplements = useSelector(state => state.firestore.ordered.supplements)
 
@@ -22,15 +22,15 @@ const SuppList = () => {
     <>
       {isLoaded(supplements)
       ? supplements.map(supplement => {
-        const { title, price, description, id } = supplement
+        const { title, description, price,  id } = supplement
         return (
           <div
-            className={selectedSupplementsId === id ? 'selected' : 'unselected'}
+            className={selectedSupplementId === id ? 'selected' : 'unselected'}
             key={id}  
             title={title}
-            price={price}
             description={description}
-            onClick={() => setSelectedSupplementsId(id)}
+            price={price}
+            onClick={() => setSelectedSupplementId(id)}
           >
             <h2>{title}</h2>
             <p>{price}</p>
