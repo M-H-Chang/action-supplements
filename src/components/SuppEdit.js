@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux'
 import { useFirestore, useFirestoreConnect } from 'react-redux-firebase';
-import { useParams, useHistory, Link } from 'react-router-dom';
+import { useParams, useHistory, } from 'react-router-dom';
 
 const SuppEdit = () => {
   const firestore = useFirestore()
@@ -32,7 +33,8 @@ const SuppEdit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    selectedSupplementId ? updatedSupplement : addNewSupplementToFireStore()
+    if (selectedSupplementId) updateSupplement()
+    else addNewSupplementToFireStore()
   }
   
   const addNewSupplementToFireStore = () => {

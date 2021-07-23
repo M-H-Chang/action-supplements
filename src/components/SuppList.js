@@ -41,6 +41,7 @@ const SuppList = () => {
       })
       : (<h3>Loading...</h3>)
      }
+     <Link to='/supplements/new'>New Supplement</Link>
     </>
   )
 }

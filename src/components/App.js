@@ -1,4 +1,4 @@
-import SurveyControl from './SurveyControl'
+import SuppControl from './SuppControl'
 
 const App = () => <SuppControl />
 
