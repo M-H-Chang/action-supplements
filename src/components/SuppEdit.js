@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useFirestore, useFirestoreConnect } from 'react-redux-firebase';
 import { useParams, useHistory, Link } from 'react-router-dom';
 
-const Supplement = () => {
+const SuppEdit = () => {
   const firestore = useFirestore()
   const history = useHistory()
   const { id: selectedSupplementId } = useParams()
@@ -80,4 +80,4 @@ const Supplement = () => {
   )
 }
 
-export default Supplement;
+export default SuppEdit;

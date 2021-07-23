@@ -23,3 +23,7 @@ What additional tools, frameworks, libraries, APIs, or other resources will thes
 
 SCSS
 A supplements API
+
+
+Research:
+Using React hooks and redux will let me use the cart functionality to add products that users choose to buy.
