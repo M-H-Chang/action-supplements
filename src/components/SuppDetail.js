@@ -18,7 +18,7 @@ function SuppDetail() {
 
   const deleteSupplement = () => {
     history.push('/supplements')
-    return firestore.delete({ collection: 'surveys', doc: selectedSuppId})
+    return firestore.delete({ collection: 'supplements', doc: selectedSuppId})
   }
 
   const supplement = useSelector(
