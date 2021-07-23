@@ -5,6 +5,8 @@ import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 import { Link, useLocation } from "react-router-dom"
 import queryString from 'query-string'
 
+const supplementColor = 'red'
+
 const SuppList = () => {
   const{ search } = useLocation()
   const selectedIdFromSearch = queryString.parse(search).selectedIdFromSearch
@@ -19,7 +21,20 @@ const SuppList = () => {
 
 
   return (
-    <>
+    <main
+    css={css`
+        div {
+          background: #eee;
+          cursor: pointer;
+          :hover, 
+          :focus {
+            color: salmon;
+          }
+        }
+        h3 {
+          color: ${supplementColor};
+        }
+      `}>
       {isLoaded(supplements)
       ? supplements.map(supplement => {
         const { title, description, price,  id } = supplement
@@ -42,7 +57,7 @@ const SuppList = () => {
       : (<h3>Loading...</h3>)
      }
      <Link to='/supplements/new'>New Supplement</Link>
-    </>
+    </main>
   )
 }
 

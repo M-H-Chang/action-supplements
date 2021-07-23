@@ -1,11 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useHistory } from 'react-redux';
 import {
   useFirestore,
   useFirestoreConnect,
   isLoaded
 } from 'react-redux-firebase'
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
   const history = useHistory()
@@ -24,13 +25,26 @@ const Cart = () => {
   const supplement = useSelector(
     state => state.firestore.data.cartSupplements[selectedSuppId]
   )
+
+  const { title, description, price } = supplement
   return (
     <>
+    {isLoaded(supplement) ?
+    (
+      <>
+      <Link to={`/cartSupplements/`}>
       <h4>Current Cart</h4>
       <p>{title}</p>
       <p>{description}</p>
       <p>{price}</p>
+      </Link>
+      </>
+    )
+    : <h3>Loading...</h3>
+    }
       <button type='submit'>Checkout</button>
     </>
   )
 }
+
+export default Cart
