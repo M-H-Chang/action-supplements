@@ -8,7 +8,7 @@ const SuppEdit = () => {
   const history = useHistory()
   const { id: selectedSupplementId } = useParams()
 
-  const [selectedSupplement, setSelectedSupplement] = useState ({
+  const [selectedSupplement, setSelectedSupplement] = useState({
     title: '',
     description: '',
     price: ''
@@ -16,13 +16,14 @@ const SuppEdit = () => {
 
   useFirestoreConnect([{ collection: 'supplements'}])
   
-  const supplement = useSelector(
-    state => state.firestore.data.supplements[selectedSupplementId]
-  )
+  // const supplement = useSelector(
+  //   state => state.firestore.data.supplements[selectedSupplementId]
+  // )
+  // console.log(supplement)
 
-  useEffect(() => {
-    if (supplement) setSelectedSupplement(supplement)
-  }, [supplement]) //second argument fedines the variable on which the hook depends on
+  // useEffect(() => {
+  //   if (supplement) setSelectedSupplement(supplement)
+  // }, [supplement]) //second argument defines the variable on which the hook depends on
 
   const handleChange = (e) => {
     const { value, name } = e.target
@@ -60,21 +61,21 @@ const SuppEdit = () => {
         type='text'
         name='title'
         placeholder='Supplment Title'
-        defaultValue='selectedSupplement.title'
+        defaultValue={selectedSupplement.title}
       />
       <input
         onChange={handleChange}
         type='text'
         name='description'
         placeholder='Add Supplement Description'
-        defaultValue='selectedSupplement.description'
+        defaultValue={selectedSupplement.description}
         />
         <input
           onChange={handleChange}
           type='text'
           name='price'
           placeholder='Add Price'
-          defaultValue='selectedSupplement.price'
+          defaultValue={selectedSupplement.price}
           />
           <button type='submit'>Done</button>
     </form>
