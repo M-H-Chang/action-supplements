@@ -29,3 +29,5 @@ Research:
 Using React hooks and redux will let me use the cart functionality to add products that users choose to buy.
 
 Using redux to make sure that te cart is fully functional.
+
+Using firstore for input API calls and C# for seeded data.
