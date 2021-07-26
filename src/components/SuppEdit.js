@@ -16,14 +16,14 @@ const SuppEdit = () => {
 
   useFirestoreConnect([{ collection: 'supplements'}])
   
-  // const supplement = useSelector(
-  //   state => state.firestore.data.supplements[selectedSupplementId]
-  // )
-  // console.log(supplement)
+  const supplement = useSelector(
+    state => state.firestore.data.supplements[selectedSupplementId]
+  )
+  console.log(supplement)
 
-  // useEffect(() => {
-  //   if (supplement) setSelectedSupplement(supplement)
-  // }, [supplement]) //second argument defines the variable on which the hook depends on
+  useEffect(() => {
+    if (supplement) setSelectedSupplement(supplement)
+  }, [supplement]) //second argument defines the variable on which the hook depends on
 
   const handleChange = (e) => {
     const { value, name } = e.target

@@ -5,7 +5,7 @@ const deleteSupplement = id => ({
   id
 })
 
-const addSupp = id => ({
+const addSupp = supplement => ({
   type: c.ADD_SUPP,
   id
 })

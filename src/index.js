@@ -16,20 +16,18 @@ const store = createStore(rootReducer)
 const rrfProps = {
   firebase,
   config: {
-    userProfile: `users`,
+    userProfile: `users`
   },
   dispatch: store.dispatch,
   createFirestoreInstance,
 }
 
 ReactDOM.render(
-  <React.StrictMode>
     <Provider store={store}>
       <ReactReduxFirebaseProvider {...rrfProps}>
         <App />
       </ReactReduxFirebaseProvider>
-    </Provider>
-  </React.StrictMode>,
+    </Provider>,
   document.getElementById(`root`)
 )
 // If you want to start measuring performance in your app, pass a function
