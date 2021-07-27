@@ -12,5 +12,7 @@ namespace RestServer.Models
     public string Description { get; set; }
     [Required]
     public string Price { get; set; }
+    [Required]
+    public string Type { get; set; }
   }
 }
