@@ -22,8 +22,15 @@ namespace RestServer.AddControllers
     private async Task<Supplement> SupplementWithId(int id) => await _db.Supplements.FindAsync(id);
 
     [HttpGet("supplements/")]
-    public async Task<ActionResult<IEnumerable<Supplement>>> GetAllSupplements();
+    public async Task<ActionResult<IEnumerable<Supplement>>> GetAllSupplements() => await _db.Supplements.ToListAsync();
 
+    [HttpGet("supplements/{id}")]
+    public async Task<ActionResult<Supplement>> GetSupplement(int id) => await SupplementWithId(id);
 
+    [HttpPost("supplements/")]
+    public async Task<ActionResult<Supplement>> PostSupplement(Supplement supplement)
+    {
+      _db.Supplements.Add()
+    }
   }
 }
