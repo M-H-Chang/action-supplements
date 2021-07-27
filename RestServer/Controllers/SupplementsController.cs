@@ -30,7 +30,34 @@ namespace RestServer.AddControllers
     [HttpPost("supplements/")]
     public async Task<ActionResult<Supplement>> PostSupplement(Supplement supplement)
     {
-      _db.Supplements.Add()
+      _db.Supplements.Add(supplement);
+      await _db.SaveChangesAsync();
+      return CreatedAtAction(nameof(SupplementWithId), new { id = supplement.Id }, supplement);
+    }
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Put(int id, Supplement s)
+    {
+      if (id != s.Id) return BadRequest();
+      _db.Entry(s).State = EntityState.Modified;
+
+      try
+      {
+        await _db.SaveChangesAsync();
+      }
+      catch (DbUpdateConcurrencyException)
+      {
+        if (!SupplementExists(id)) return NotFound();
+        else throw;
+      }
+      return NoContent();
+    }
+    [HttpDelete("supplement/{id}")]
+    public async Task<IActionResult> DeleteSupplement(int id)
+    {
+      if (await SupplementWithId(id) is not Supplement s) return NotFound();
+      _db.Supplements.Remove(s);
+      await _db.SaveChangesAsync();
+      reutnr NoContent();
     }
   }
 }
