@@ -55,38 +55,31 @@ export default class App extends Component {
     this.setState({ user: null });
     localStorage.removeItem("user");
   };
-} 
-render() {
-  return (
-    <Context.Provider
-        value={{
-          ...this.state,
-          removeFromCart: this.removeFromCart,
-          addToCart: this.addToCart,
-          login: this.login,
-          addProduct: this.addProduct,
-          clearCart: this.clearCart,
-          checkout: this.checkout
-        }}
-      >
-        <Router ref={this.routerRef}>
-        
-        onClick={e => {
-                  e.preventDefault();
-                  this.setState({ showMenu: !this.state.showMenu });
-        }}
-
-                <Link to="/products">
-                  Products
-                </Link>
-                {this.state.user && this.state.user.accessLevel < 1 && (
-                  <Link to="/add-product" className="navbar-item">
-                    Add Product
+  render() {
+    return (
+      <Context.Provider
+          value={{
+            ...this.state,
+            removeFromCart: this.removeFromCart,
+            addToCart: this.addToCart,
+            login: this.login,
+            addSupp: this.addSupp,
+            clearCart: this.clearCart,
+            checkout: this.checkout
+          }}
+        >
+          <Router ref={this.routerRef}>
+          <h1>Action Supplements</h1>
+                  <Link to="/products">
+                    Products
                   </Link>
-                )}
-        </Router>
-      </Context.Provider>
-  )
-}
-
-export default App
+                  {this.state.user && this.state.user.accessLevel < 1 && (
+                    <Link to="/add-product" className="navbar-item">
+                      Add Product
+                    </Link>
+                  )}
+          </Router>
+        </Context.Provider>
+    )
+  }
+} 
