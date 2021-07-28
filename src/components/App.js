@@ -9,6 +9,8 @@ const App = () => {
     error: allSupplementsError,
     isLoading: allSupplementsIsLoading
   } = useGetAllSupplementsQuery();
+  console.log('allSupplements', allSupplements)
+
   if (allSupplementsIsLoading) return <div>Loading...</div>;
   if (allSupplementsError) return <div>Unable to load supplements.</div>
   return (
