@@ -8,7 +8,9 @@ function AddSupp() {
 
   return (
     <>
-      
+      AddSupp
     </>
   )
 }
+
+export default AddSupp;

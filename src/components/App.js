@@ -1,27 +1,92 @@
 import SuppControl from './SuppControl'
-import { useGetAllSupplementsQuery } from "../store/supplementApi"
-import { Link } from "react-router-dom"
+import React, { Component } from "react";
+import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
 
-const App = () => {
-  <SuppControl />
-  const {
-    data: allSupplements,
-    error: allSupplementsError,
-    isLoading: allSupplementsIsLoading
-  } = useGetAllSupplementsQuery();
-  console.log('allSupplements', allSupplements)
+import AddSupp from './AddSupp';
+import Cart from './Cart';
+import Login from './Login';
+import SuppList from './SuppList';
+import { render } from '@testing-library/react';
+import Context from "./Context";
+import axios from 'axios';
+import jwt_decode from 'jwt-decode';
 
-  if (allSupplementsIsLoading) return <div>Loading...</div>;
-  if (allSupplementsError) return <div>Unable to load supplements.</div>
-  return (
-    <ul>
-      {allSupplements.map((supplement, idx) => (
-        <li key={idx}>
-          <Link to={`/details/${supplement.id}`}>{supplement.name}</Link>
-        </li>
-      ))}
-    </ul>
-  )
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null,
+      cart: {},
+      products: []
+    };
+    this.routerRef = React.createRef();
+  }
+  componentDidMount() {
+    let user = localStorage.getItem("user");
+    user = user ? JSON.parse(user) : null;
+    this.setState({ user });
+  }
+  login = async (email, password) => {
+    const res = await axios.post(
+      'http://localhost:3001/login',
+      { email, password },
+    ).catch((res) => {
+      return { status: 401, message: 'Unauthorized' }
+    })
+  
+    if(res.status === 200) {
+      const { email } = jwt_decode(res.data.accessToken)
+      const user = {
+        email,
+        token: res.data.accessToken,
+        accessLevel: email === 'admin@example.com' ? 0 : 1
+      }
+  
+      this.setState({ user });
+      localStorage.setItem("user", JSON.stringify(user));
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  logout = e => {
+    e.preventDefault();
+    this.setState({ user: null });
+    localStorage.removeItem("user");
+  };
 } 
+render() {
+  return (
+    <Context.Provider
+        value={{
+          ...this.state,
+          removeFromCart: this.removeFromCart,
+          addToCart: this.addToCart,
+          login: this.login,
+          addProduct: this.addProduct,
+          clearCart: this.clearCart,
+          checkout: this.checkout
+        }}
+      >
+        <Router ref={this.routerRef}>
+        
+        onClick={e => {
+                  e.preventDefault();
+                  this.setState({ showMenu: !this.state.showMenu });
+        }}
+
+                <Link to="/products">
+                  Products
+                </Link>
+                {this.state.user && this.state.user.accessLevel < 1 && (
+                  <Link to="/add-product" className="navbar-item">
+                    Add Product
+                  </Link>
+                )}
+        </Router>
+      </Context.Provider>
+  )
+}
 
 export default App

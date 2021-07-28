@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "email": "fakeemail@fake.com",
+      "password": "fakepassword",
+      "id": 1
+    },
+    {
+      "email": "fakeadmin@fake.com",
+      "password": "fakepassword",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Ghost Protein",
+      "Description": "26 Serving Sizes",
+      "Price": "$39.99",
+      "Type": "Protein"
+    }
+  ]
+}
