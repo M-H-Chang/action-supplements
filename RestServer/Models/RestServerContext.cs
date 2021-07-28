@@ -5,9 +5,11 @@ namespace RestServer.Models
 {
   public class RestServerContext : IdentityDbContext<ApplicationUser>
   {
-    protected override void OnModelCreating(ModelBuilder builder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-      builder.Entity<Supplement>()
+      base.OnModelCreating(modelBuilder);
+
+      modelBuilder.Entity<Supplement>()
       .HasData(
         new Supplement { Id = 1, Name = "Ghost Protein", Description = "26 Serving Sizes", Price = "$39.99", Type = "Protein" },
         new Supplement { Id = 2, Name = "GNC AMP Wheybolic Protein", Description = "25 Serving Sizes", Price = "$64.99", Type = "Protein" },
