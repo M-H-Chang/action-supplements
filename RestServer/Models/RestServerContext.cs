@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace RestServer.Models
 {
-  public class RestServerContext : DbContext
+  public class RestServerContext : IdentityDbContext<ApplicationUser>
   {
     protected override void OnModelCreating(ModelBuilder builder)
     {

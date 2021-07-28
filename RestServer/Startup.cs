@@ -14,6 +14,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using RestServer.Models;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace RestServer
 {
@@ -47,7 +49,11 @@ namespace RestServer
       {
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "supplement_store", Version = "v1" });
       });
+      services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<RestServerContext>()
+                .AddDefaultTokenProviders();
     }
+
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -62,6 +68,8 @@ namespace RestServer
       app.UseCors(MyAllowSpecificOrigins);
 
       app.UseHttpsRedirection();
+
+      app.UseAuthentication();
 
       app.UseRouting();
 
