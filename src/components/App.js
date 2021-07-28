@@ -1,7 +1,6 @@
 import SuppControl from './SuppControl'
 import React, { Component } from "react";
 import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
-
 import AddSupp from './AddSupp';
 import Cart from './Cart';
 import Login from './Login';
@@ -70,14 +69,42 @@ export default class App extends Component {
         >
           <Router ref={this.routerRef}>
           <h1>Action Supplements</h1>
-                  <Link to="/products">
+          <label onClick={e => {
+            e.preventDefault();
+            this.setState({ showMenu: !this.state.showMenu });
+          }}>
+
+          </label>
+                  <Link to="/SuppList">
                     Products
                   </Link>
                   {this.state.user && this.state.user.accessLevel < 1 && (
-                    <Link to="/add-product" className="navbar-item">
+                    <Link to="/add-product">
                       Add Product
                     </Link>
                   )}
+                  <Link to="/cart">
+                  Cart
+                  <span>
+                    { Object.keys(this.state.cart).length }
+                  </span>
+                </Link>
+                {!this.state.user ? (
+                  <Link to="/login">
+                    Login
+                  </Link>
+                ) : (
+                  <Link to="/" onClick={this.logout}>
+                    Logout
+                  </Link>
+                )}
+                <Switch>
+                  <Route exact path="/" component={SuppList} />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/cart" component={Cart} />
+                  <Route exact path="/add-Supp" component={AddSupp} />
+                  <Route exact path="/supplements" component={SuppList} />
+                </Switch>
           </Router>
         </Context.Provider>
     )

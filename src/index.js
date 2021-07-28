@@ -6,26 +6,26 @@ import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
 import { createFirestoreInstance } from 'redux-firestore'
 import "./index.css"
 import App from "./components/App"
-import { store } from "./store";
+// import { store } from "./store";
 import rootReducer from './reducers/index'
 import firebase from "./firebase"
 
 // import reportWebVitals from "./reportWebVitals"
 
-const reduxStore = createStore(rootReducer)
+const store = createStore(rootReducer)
 
 const rrfProps = {
   firebase,
   config: {
     userProfile: `users`
   },
-  dispatch: reduxStore.dispatch,
+  dispatch: store.dispatch,
   createFirestoreInstance,
 }
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store, reduxStore}>
+    <Provider store={store}>
       <ReactReduxFirebaseProvider {...rrfProps}>
         <App />
       </ReactReduxFirebaseProvider>

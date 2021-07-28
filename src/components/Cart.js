@@ -9,7 +9,7 @@ import { useParams } from 'react-router';
 import { Link } from 'react-router-dom'
 
 const Cart = () => {
-  const history = useHistory()
+  // const history = useHistory()
   const firestore = useFirestore()
   const { id: selectedSuppId } = useParams()
 
@@ -47,4 +47,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Cart;
