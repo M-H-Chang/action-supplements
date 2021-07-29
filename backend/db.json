@@ -18,7 +18,7 @@
       "description": "26 Serving Sizes",
       "price": "$39.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "19"
     },
     {
       "id": "2",
@@ -26,7 +26,7 @@
       "description": "25 Serving Sizes",
       "price": "$64.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "17"
     },
     {
       "id": "3",
@@ -34,7 +34,7 @@
       "description": "80 Serving Sizes",
       "price": "$59.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "23"
     },
     {
       "id": "4",
@@ -42,7 +42,7 @@
       "description": "24 Serving Sizes",
       "price": "$29.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "54"
     },
     {
       "id": "5",
@@ -50,7 +50,7 @@
       "description": "28 Serving Sizes",
       "price": "$34.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "27"
     },
     {
       "id": "6",
@@ -58,7 +58,7 @@
       "description": "22 Serving Sizes",
       "price": "$69.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "90"
     },
     {
       "id": "7",
@@ -66,7 +66,7 @@
       "description": "49 Serving Sizes",
       "price": "$59.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "57"
     },
     {
       "id": "8",
@@ -74,7 +74,7 @@
       "description": "30 Serving Sizes",
       "price": "$44.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "12"
     },
     {
       "id": "9",
@@ -82,7 +82,7 @@
       "description": "28 Serving Sizes",
       "price": "$39.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "3"
     },
     {
       "id": "10",
@@ -98,7 +98,7 @@
       "description": "22 Serving Sizes",
       "price": "$69.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "46"
     },
     {
       "id": "12",
@@ -106,7 +106,7 @@
       "description": "20 Serving Sizes",
       "price": "$32.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "8"
     },
     {
       "id": "13",
@@ -114,7 +114,7 @@
       "description": "30 Serving Sizes",
       "price": "$37.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "12"
     },
     {
       "id": "14",
@@ -122,7 +122,7 @@
       "description": "10 Serving Sizes",
       "price": "$34.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "15"
     },
     {
       "id": "15",
@@ -130,7 +130,7 @@
       "description": "23 Serving Sizes",
       "price": "$29.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "12"
     },
     {
       "id": "16",
@@ -138,7 +138,7 @@
       "description": "15 Serving Sizes",
       "price": "$19.99",
       "type": "Protein",
-      "stock": "4"
+      "stock": "26"
     },
     {
       "id": "17",
@@ -146,7 +146,7 @@
       "description": "24 Serving Sizes",
       "price": "$39.99",
       "type": "Preworkout",
-      "stock": "4"
+      "stock": "35"
     },
     {
       "id": "18",
@@ -154,7 +154,7 @@
       "description": "20 Serving Sizes",
       "price": "$45.99",
       "type": "Preworkout",
-      "stock": "4"
+      "stock": "32"
     },
     {
       "id": "19",
@@ -162,7 +162,7 @@
       "description": "24 Serving Sizes",
       "price": "$44.99",
       "type": "Preworkout",
-      "stock": "4"
+      "stock": "72"
     },
     {
       "id": "20",
@@ -170,7 +170,7 @@
       "description": "40 Serving Sizes",
       "price": "$39.99",
       "type": "Preworkout",
-      "stock": "4"
+      "stock": "2"
     },
     {
       "id": "21",
@@ -186,7 +186,7 @@
       "description": "24 Serving Sizes",
       "price": "$36.99",
       "type": "Preworkout",
-      "stock": "4"
+      "stock": "6"
     },
     {
       "id": "23",
@@ -194,7 +194,7 @@
       "description": "24 Serving Sizes",
       "price": "$34.99",
       "type": "Preworkout",
-      "stock": "4"
+      "stock": "9"
     },
     {
       "id": "24",
@@ -202,7 +202,7 @@
       "description": "25 Serving Sizes",
       "price": "$44.99",
       "type": "Preworkout",
-      "stock": "4"
+      "stock": "17"
     }
   ]
 }

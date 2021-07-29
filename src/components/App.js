@@ -6,7 +6,6 @@ import AddSupp from './AddSupp';
 import Cart from './Cart';
 import Login from './Login';
 import SuppList from './SuppList';
-import { render } from '@testing-library/react';
 import Context from "./Context";
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
@@ -78,6 +77,9 @@ export default class App extends Component {
         > 
           <Router ref={this.routerRef}>
           <nav
+          css={css `
+          text-align: center;
+          `}
             className="navbar container"
             role="navigation"
             aria-label="main navigation"
@@ -100,7 +102,11 @@ export default class App extends Component {
                 <span aria-hidden="true"></span>
               </label>
             </div>
-              <div className={`navbar-menu ${
+              <div 
+              css={css `
+              text-align: center;
+              `}
+              className={`navbar-menu ${
                   this.state.showMenu ? "is-active" : ""
                 }`}>
                 <Link to="/SuppList" className="navbar-item">
@@ -131,8 +137,6 @@ export default class App extends Component {
                 )}
               </div>
             </nav>
-            
-           
                 <Switch>
                   <Route exact path="/" component={SuppList} />
                   <Route exact path="/login" component={Login} />

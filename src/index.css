@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* .card {
+  border: 1px solid black;
+  word-wrap: break-word;
+  float: left;
+  max-width: fit-content;
+  margin: 1px;
+  padding: 10px 3px;
+  /*setting width for each and every card element as well as -10px for removing the margin width for 5 elements*/
