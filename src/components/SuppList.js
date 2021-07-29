@@ -66,9 +66,9 @@ const SuppList = (props) => {
             price={price}
             onClick={() => setSelectedSupplementId(id)}
           >
-            <h2>{title}</h2>
+            {/* <h2>{title}</h2>
             <p>{price}</p>
-            <p>{description}</p>
+            <p>{description}</p> */}
           </div>
         )
         

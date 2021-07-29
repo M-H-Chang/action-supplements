@@ -19,6 +19,190 @@
       "price": "$39.99",
       "type": "Protein",
       "stock": "4"
+    },
+    {
+      "id": "2",
+      "name": "GNC AMP Wheybolic Protein",
+      "description": "25 Serving Sizes",
+      "price": "$64.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "3",
+      "name": "Optimum Protein",
+      "description": "80 Serving Sizes",
+      "price": "$59.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "4",
+      "name": "Dymatize ISO Protein",
+      "description": "24 Serving Sizes",
+      "price": "$29.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "5",
+      "name": "GNC AMP Pure Isolate Protein",
+      "description": "28 Serving Sizes",
+      "price": "$34.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "6",
+      "name": "GNC AMP Wheybolic™ Ripped Performance Protein",
+      "description": "22 Serving Sizes",
+      "price": "$69.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "7",
+      "name": "Jym® Pro Jym Ultra-Premium Protein Powder Blend",
+      "description": "49 Serving Sizes",
+      "price": "$59.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "8",
+      "name": "Alani Nu Whey Protein",
+      "description": "30 Serving Sizes",
+      "price": "$44.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "9",
+      "name": "NC AMP Sustained Protein Blend",
+      "description": "28 Serving Sizes",
+      "price": "$39.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "10",
+      "name": "Isopure® Zero Carb Protein Powder",
+      "description": "44 Serving Sizes",
+      "price": "$44.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "11",
+      "name": "GNC AMP Wheybolic",
+      "description": "22 Serving Sizes",
+      "price": "$69.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "12",
+      "name": "Jym® Iso Jym Whey Protein Isolate",
+      "description": "20 Serving Sizes",
+      "price": "$32.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "13",
+      "name": "Musclegen Performance Nutrition Genepro® Next Generation Protein - Flavorless",
+      "description": "30 Serving Sizes",
+      "price": "$37.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "14",
+      "name": "GNC AMP Wheybolic™ - Classic Vanilla",
+      "description": "10 Serving Sizes",
+      "price": "$34.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "15",
+      "name": "Pro Supps® Whey Isolate Protein",
+      "description": "23 Serving Sizes",
+      "price": "$29.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "16",
+      "name": "Isopure® Low Carb Protein Powder",
+      "description": "15 Serving Sizes",
+      "price": "$19.99",
+      "type": "Protein",
+      "stock": "4"
+    },
+    {
+      "id": "17",
+      "name": "BSN® N.O.-Xplode® VASO Pre-Workout",
+      "description": "24 Serving Sizes",
+      "price": "$39.99",
+      "type": "Preworkout",
+      "stock": "4"
+    },
+    {
+      "id": "18",
+      "name": "Cellucor® C4® Ultimate Pre-Workout",
+      "description": "20 Serving Sizes",
+      "price": "$45.99",
+      "type": "Preworkout",
+      "stock": "4"
+    },
+    {
+      "id": "19",
+      "name": "Alani Nu Pre-Workout",
+      "description": "24 Serving Sizes",
+      "price": "$44.99",
+      "type": "Preworkout",
+      "stock": "4"
+    },
+    {
+      "id": "20",
+      "name": "Axe & Sledge Supplements™ Ignition Switch Stim Pre-Workout",
+      "description": "40 Serving Sizes",
+      "price": "$39.99",
+      "type": "Preworkout",
+      "stock": "4"
+    },
+    {
+      "id": "21",
+      "name": "Beyond Raw® Precision BCAA",
+      "description": "30 Serving Sizes",
+      "price": "$39.99",
+      "type": "Preworkout",
+      "stock": "4"
+    },
+    {
+      "id": "22",
+      "name": "GAT® Sport NITRAFLEX® Pre-Workout",
+      "description": "24 Serving Sizes",
+      "price": "$36.99",
+      "type": "Preworkout",
+      "stock": "4"
+    },
+    {
+      "id": "23",
+      "name": "Cellucor® C4® Extreme Pre-Workout",
+      "description": "24 Serving Sizes",
+      "price": "$34.99",
+      "type": "Preworkout",
+      "stock": "4"
+    },
+    {
+      "id": "24",
+      "name": "GHOST® LEGEND® V2 Pre-Workout",
+      "description": "25 Serving Sizes",
+      "price": "$44.99",
+      "type": "Preworkout",
+      "stock": "4"
     }
   ]
 }
