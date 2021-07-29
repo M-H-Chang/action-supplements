@@ -20,11 +20,13 @@ export default class App extends Component {
     };
     this.routerRef = React.createRef();
   }
-  componentDidMount() {
+  async componentDidMount() {
     let user = localStorage.getItem("user");
+    const supplements = await axios.get('http://localhost:3001/supplements')
     user = user ? JSON.parse(user) : null;
-    this.setState({ user });
+    this.setState({ user, supplements: supplements.data});
   }
+  
   login = async (email, password) => {
     const res = await axios.post(
       'http://localhost:3001/login',
@@ -47,8 +49,8 @@ export default class App extends Component {
     } else {
       return false;
     }
-  }
   
+  }
   logout = e => {
     e.preventDefault();
     this.setState({ user: null });

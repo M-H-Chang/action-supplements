@@ -4,17 +4,12 @@ import { useSelector } from 'react-redux'
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 import { Link, useLocation } from "react-router-dom"
 import queryString from 'query-string'
-import { useGetAllSupplementsQuery } from "../store/supplementApi"
+import withContext from "./SuppList"
 
 const supplementColor = 'red'
 
-const SuppList = () => {
-  const {
-    data: allSupplements,
-    error: allSupplementsError,
-    isLoading: allSupplementsIsLoading
-  } = useGetAllSupplementsQuery();
-
+const SuppList = (props) => {
+  const { supplements } = props.context;
   const{ search } = useLocation()
   const selectedIdFromSearch = queryString.parse(search).selectedIdFromSearch
 
@@ -24,14 +19,10 @@ const SuppList = () => {
 
   const [selectedSupplementId, setSelectedSupplementId] = useState(selectedIdFromSearch)
 
-  const supplements = useSelector(state => state.firestore.ordered.supplements)
+  // const supplements = useSelector(state => state.firestore.ordered.supplements)
 
-  if (allSupplementsIsLoading) return <div>Loading...</div>;
-  if (allSupplementsError) return <div>Unable to load supplements.</div>
   return (
     <main
-    
-
     css={css`
         div {
           background: #eee;
@@ -45,13 +36,19 @@ const SuppList = () => {
           color: ${supplementColor};
         }
       `}>
-        <ul>
-      {allSupplements.map((supplement, idx) => (
-        <li key={idx}>
-          <Link to={`/details/${supplement.id}`}>{supplement.name}</Link>
-        </li>
-      ))}
-    </ul>
+        <h1>Current Supplements</h1>
+        {supplements && supplements.length ? (
+        supplements.map((supplement, index) => (
+        <Supplement
+          supplement={supplement}
+          key={index}
+          addToCart={props.context.addToCart}
+        />
+        ))
+        ) : ( 
+          <p>No Supplements Found</p>
+        )}
+
       {isLoaded(supplements)
       ? supplements.map(supplement => {
         const { title, description, price,  id } = supplement
@@ -78,4 +75,4 @@ const SuppList = () => {
   )
 }
 
-export default SuppList;
+export default withContext(SuppList);
