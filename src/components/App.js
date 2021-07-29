@@ -66,7 +66,7 @@ export default class App extends Component {
             clearCart: this.clearCart,
             checkout: this.checkout
           }}
-        >
+        > 
           <Router ref={this.routerRef}>
           <h1>Action Supplements</h1>
           <label onClick={e => {
