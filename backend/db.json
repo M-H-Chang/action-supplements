@@ -15,9 +15,10 @@
     {
       "id": "1",
       "name": "Ghost Protein",
-      "Description": "26 Serving Sizes",
-      "Price": "$39.99",
-      "Type": "Protein"
+      "description": "26 Serving Sizes",
+      "price": "$39.99",
+      "type": "Protein",
+      "stock": "4"
     }
   ]
 }

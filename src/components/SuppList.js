@@ -1,10 +1,11 @@
 import { css } from "@emotion/react"
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 import { Link, useLocation } from "react-router-dom"
 import queryString from 'query-string'
-import withContext from "./SuppList"
+import withContext from "./withContext"
+import Supplement from "./Supplement"
 
 const supplementColor = 'red'
 
@@ -38,10 +39,14 @@ const SuppList = (props) => {
       `}>
         <h1>Current Supplements</h1>
         {supplements && supplements.length ? (
-        supplements.map((supplement, index) => (
+        supplements.map((supplement, stock, price, description, index) => (
         <Supplement
           supplement={supplement}
+          price={price}
+          stock={stock}
+          description={description}
           key={index}
+
           addToCart={props.context.addToCart}
         />
         ))

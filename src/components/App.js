@@ -16,7 +16,7 @@ export default class App extends Component {
     this.state = {
       user: null,
       cart: {},
-      products: []
+      supplements: []
     };
     this.routerRef = React.createRef();
   }
@@ -56,6 +56,12 @@ export default class App extends Component {
     this.setState({ user: null });
     localStorage.removeItem("user");
   };
+  addProduct = (supplement, callback) => {
+    let supplements = this.state.supplements.slice();
+  supplements.push(supplement);
+    this.setState({supplements }, () => callback && callback());
+  };
+ 
   render() {
     return (
       <Context.Provider
