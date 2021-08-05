@@ -70,4 +70,37 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 # Name
+Action Supplements
+
+## Tech Used
+- React.js
+- JavaScript
+- Axios
+- C#
+- MySQL
+- Firebase
+
+## Description
+- Ecommerce site built to show users the most popular supplements in the market right now. It let's users checkout using a cart system and allow users to see the details of each supplement listed on the site.
+
+## Setup
+1. Navigate to repository `https://github.com/M-H-Chang/action-supplements` and clone the repository.
+2. Navigate to the purposed directory and clone down the project.
+3. Open the project in your IDE.
+
+## Usage
+- This project was to show all the different backends that is currently implemented into the project. 
+### Current Backends
+- Axios
+- Firestore
+- MySql using C#
+
+## Bugs
+- Currently the links for cart react components are not working.
+
+## Learning Experiences
+- This project was to play around with different backends to learn more about them. Each backend had their own use initially. But implementing multiple backends caused many bugs and inconsistencies throughout the application. So I decided to fiddle around different databases.
+
+
+
 
