@@ -9,6 +9,11 @@
       "email": "fakeadmin@fake.com",
       "password": "fakepassword",
       "id": 2
+    },
+    {
+      "email": "minchangtest@minchang.com",
+      "password:": "minfake",
+      "id": 3
     }
   ],
   "supplements": [

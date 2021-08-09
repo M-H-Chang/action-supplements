@@ -45,18 +45,18 @@ function AddSupp() {
   handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "" });
 
 
-// render () {
-//   const { name, price, stock, description } = this.state;
-//   const { user } = this.props.context;
+render (){
+  const { name, price, stock, description } = this.state;
+  const { user } = this.props.context;
 
-//   return !(user && user.accessLevel < 1) ? (
-//     <Redirect to='/' />
+  return !(user && user.accessLevel < 1) ? (
+    <Redirect to='/' />
     
-//     <>
-//       AddSupp
-//     </>
-//   )
-// }
+    <>
+      AddSupp
+    </>
+  )
+}
 }
 
 export default AddSupp;
